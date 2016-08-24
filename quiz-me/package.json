@@ -1,7 +1,7 @@
 {
-  "name": "dashboard",
+  "name": "react-todo",
   "version": "0.1.4",
-  "description": "todo dashboard using http api",
+  "description": "React application todo list",
   "author": "hammad tariq",
   "license": "ISC",
   "scripts": {
@@ -18,9 +18,7 @@
   },
   "dependencies": {
     "marked": "^0.3.6",
-    "react": "^15.3.1",
-    "react-addons-update": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "whatwg-fetch": "^1.0.0"
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
   }
 }
