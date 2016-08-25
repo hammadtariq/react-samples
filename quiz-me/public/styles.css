@@ -1,48 +1,38 @@
-input {
+body {
+margin: 0;
+font: 16px/1 sans-serif;
+}
+menu ul{
+margin: 0;
+padding: 0;
+}
+menu li {
+display: inline-block;
 padding: 5px;
-width: 120px;
-margin-top:10px;
 }
- 
-.item {
-background-color: #efefef;
-cursor: pointer;
-display: block;
-margin-bottom: 1px;
-padding: 8px 12px;
-width: 120px;
+a.active {
+color: #444;
+font-weight: bold;
+text-decoration: none;
 }
-
-.example-enter {
-opacity: 0;
-transform: translateX(-250px);
+header {
+padding: 10px;
+background-color: #333;
+color: white;
+font-size: 20px;
+font-weight: bold;
 }
-
-.example-enter.example-enter-active {
-opacity: 1;
-transform:
-translateX(0);
-transition: 0.3s;
+menu {
+background-color: green;
+padding: 5px;
+margin-top: 0;
+margin-bottom: 10px;
 }
 
-.example-leave {
-opacity: 1;
-transform: translateX(0);
+li a{
+color: white;
 }
 
-.example-leave.example-leave-active {
-opacity: 0;
-transform: translateX(250px);
-transition: 0.3s;
-}
-
-.example-appear {
-opacity: 0;
-transform: translateX(-250px);
-}
-.example-appear.example-appear-active {
-opacity: 1;
-transform:
-translateX(0);
-transition: .5s;
+li a:hover{
+    color: lightblue;
 }

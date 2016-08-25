@@ -1,63 +1,34 @@
-import React, { Component }from 'react';
-import {render} from 'react-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
-class AnimatedShoppingList extends Component {
-    constructor(){
-        super(...arguments);
-        // Create an "items" state pre-populated with some shopping items
-        this.state={
-            items: [
-                {id:1, name: 'Milk'},
-                {id:2, name: 'Yogurt'},
-                {id:3, name: 'Orange Juice'},
-            ]
-        }
-    }
-
-    // Called when the user changes the input field
-    handleChange(evt) {
-        if(evt.key === 'Enter'){
-        // Create a new item and set the current time as it's id
-        let newItem = {id:Date.now(), name:evt.target.value}
-        // Create a new array with the previous items plus the value the user typed
-        let newItems = this.state.items.concat(newItem);
-        // Clear the text field
-        evt.target.value='';
-        // Set the new state
-        this.setState({items: newItems});
-        }
-    }
-    
-    // Called when the user Clicks on a shopping item
-    handleRemove(i) {
-        // Create a new array without the clicked item
-        var newItems = this.state.items;
-        newItems.splice(i, 1);
-        // Set the new state
-        this.setState({items: newItems});
-    }
-    render(){
-        let shoppingItems = this.state.items.map((item, i) => (
-            <div key={item.id}
-            className="item"
-            onClick={this.handleRemove.bind(this, i)}>
-            {item.name}
-            </div>
-        ));
-        return(
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
+ 
+import Home from './Home';
+import Login from './Login';
+import Signup from './Signup';
+ 
+class App extends Component {
+    render() {
+        return (
             <div>
-            <ReactCSSTransitionGroup transitionName="example"
-                transitionEnterTimeout={300}
-                transitionLeaveTimeout={300}
-                transitionAppear={true}
-                transitionAppearTimeout={300}>
-                {shoppingItems}
-            </ReactCSSTransitionGroup>
-            <input type="text" value={this.state.newItem} onKeyDown={this.handleChange.bind(this)}/>
+                <header>Quiz Me</header>
+                    <menu>
+                        <ul>
+                            <li><Link to="/login">Login</Link></li>
+                            <li><Link to="/signup">Singup</Link></li>
+                        </ul>
+                    </menu>
+                {this.props.children}
             </div>
         );
-    }
-};
+        }
+}
  
-render(<AnimatedShoppingList />, document.getElementById('root'));
+render((
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home}/>
+            <Route path="login" component={Login}/>
+            <Route path="signup" component={Signup}/>
+        </Route>
+    </Router>
+), document.getElementById('root'));
