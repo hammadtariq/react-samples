@@ -1,7 +1,7 @@
 {
-  "name": "quiz-me",
+  "name": "routing-react",
   "version": "0.1.4",
-  "description": "React quiz application",
+  "description": "React application routing",
   "author": "hammad tariq",
   "license": "ISC",
   "scripts": {
@@ -17,9 +17,8 @@
     "webpack-dev-server": "~1.14.*"
   },
   "dependencies": {
-    "marked": "^0.3.6",
     "react": "^15.3.1",
-    "react-addons-css-transition-group": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-router": "^2.7.0"
   }
 }
