@@ -9,11 +9,11 @@ import NewCard from './NewCard';
  
 render((
 <Router history={hashHistory}>
-<Route component={KanbanBoardContainer}>
-<Route path="/" component={KanbanBoard}>
-<Route path="new" component={NewCard} />
-<Route path="edit/:card_id" component={EditCard} />
-</Route>
-</Route>
+    <Route component={KanbanBoardContainer}>
+        <Route path="/" component={KanbanBoard}>
+            <Route path="new" component={NewCard} />
+            <Route path="edit/:card_id" component={EditCard} />
+        </Route>
+    </Route>
 </Router>
 ), document.getElementById('root'));

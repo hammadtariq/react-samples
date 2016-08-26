@@ -159,9 +159,9 @@ class KanbanBoardContainer extends Component {
             // set the component state to the mutated object
             this.setState(update(this.state, {
             cards: {
-            [cardIndex]: {
-            status: { $set: listId }
-            }
+                [cardIndex]: {
+                    status: { $set: listId }
+                }
             }
             }));
         }

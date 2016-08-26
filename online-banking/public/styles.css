@@ -1,0 +1,42 @@
+body {
+margin: 0;
+font: 16px/1 sans-serif;
+}
+menu ul{
+margin: 0;
+padding: 0;
+}
+menu li {
+display: inline-block;
+padding: 5px;
+}
+a.active {
+color: lightblue;
+font-weight: bold;
+text-decoration: none;
+}
+header {
+padding: 10px;
+background-color: #333;
+color: white;
+font-size: 20px;
+font-weight: bold;
+}
+menu {
+background-color: green;
+padding: 5px;
+margin-top: 0;
+margin-bottom: 10px;
+}
+
+menu a{
+color: white;
+}
+
+li a:hover{
+    color: lightblue;
+}
+
+action_name{
+    text-transform: capitalize;
+}
