@@ -10,7 +10,7 @@ class Dashboard extends Component {
         let { deposit, withdrawal, transfer } = this.props.transactionCallbacks;
         let transactionInfo = this.props.userData.map((d,i)=>{
         return <tr key={i}>
-                    <td className="action_name">{d.action}</td>
+                    <td>{d.action}</td>
                     <td>{d.amount} Rs</td>
                     <td>{d.balance} Rs</td>
                 </tr>
